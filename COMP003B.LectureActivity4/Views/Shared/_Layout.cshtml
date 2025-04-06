@@ -29,10 +29,19 @@
                 </div>
             </div>
         </nav>
+
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a> |
+            <a asp-controller="Articles" asp-action="Index">Articles</a>
+        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            .
+    <main class="container mt-3">
+        @RenderBody()
+    </main>
         </main>
     </div>
 
@@ -40,10 +49,12 @@
         <div class="container">
             &copy; 2025 - COMP003B.LectureActivity4 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
+        <p>&copy; 2025 - Razor Demo</p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
